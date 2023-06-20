@@ -7,8 +7,15 @@ class Basic extends Base {
     Basic(script, jenkins) {
         super(script, jenkins)
     }
-    public def get() {
-        return this.jenkins.getItem(this.script.env.getProperty('JOB_NAME'))
+
+    public void cleanWorkspace() {
+        this.jenkinsPrint("cleaning the workspace.....")
+        this.script.cleanWs(cleanWhenAborted: false,
+                            cleanWhenFailure: false,
+                            cleanWhenNotBuilt: false,
+                            cleanWhenSuccess: true,
+                            cleanWhenUnstable: false
+                           )
     }
-    
+
 }
