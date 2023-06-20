@@ -12,7 +12,7 @@ class Base implements Serializable {
     Base(script, jenkins) {   // jenkins : class jenkins.model.Jenkins (it is a singleton class)
         this.id = UUID.randomUUID();
         this.script = script;
-        this.jenkins = jenkins
+        this.jenkins = jenkins.get()
         this.name = "";
     }
 
