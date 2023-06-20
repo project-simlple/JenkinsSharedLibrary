@@ -13,8 +13,9 @@ class Base implements Serializable {
         this.id = UUID.randomUUID();
         this.script = script;
         this.jenkins = jenkins.get()
-        this.name = ""
+        this.name = "";
     }
+
     public UUID getId() {
         return this.@id;
     }
@@ -25,15 +26,23 @@ class Base implements Serializable {
         return this.@jenkins;
     }
     public String getName() {
-        return this.@name
+        return this.@name;
     }
     public void setScript(script) {
         this.@script = script;
     }
     public void setJenkins(jenkins) {
-        this.@jenkins = jenkins.get()
+        this.@jenkins = jenkins.get();
     }
-    public void setName(name) {
-        this.@name = name
+    public void setName(String name) {
+        this.@name = name;
+    }
+
+    public void jenkinsPrint(String log) {
+        if (this.script != null) {
+            this.script.echo(message: log);
+        } else {
+            println(log);
+        }
     }
 }
