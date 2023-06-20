@@ -46,6 +46,7 @@ class Base implements Serializable {
         }
     }
     
+    @NonCPS
     public static def getJenkinsSingleton(jenkins) {
         return jenkins.get()
     }
