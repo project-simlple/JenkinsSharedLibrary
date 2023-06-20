@@ -2,25 +2,25 @@ package kapil.base
 
 class WithIp extends Base {
 
-    protected String host_name;
-    protected String ipv4_address;
+    protected String host;
+    protected String ipv4;
 
     WithIp(script, jenkins) {
         super(script, jenkins)
-        this.host_name = ""
-        this.ipv4_address = ""
+        this.host = "";
+        this.ipv4 = "";
     }
-    public String getHostName() {
-        return this.@host_name
+
+    public String getHost() {
+        return this.@host;
     }
-    public String getIpv4Address() {
-        return this.@ipv4_address
+    public String getIpv4() {
+        return this.@ipv4;
     }
-    public void setHostName(host_name) {
-        this.@host_name = host_name
+    public void setHost(String host) {
+        this.@host = host;
     }
-    public void setIpv4Address(ipv4_address) {
-        this.@ipv4_address = ipv4_address
+    public void setIpv4(String ipv4) {
+        this.@ipv4 = ipv4;
     }
 }
-
