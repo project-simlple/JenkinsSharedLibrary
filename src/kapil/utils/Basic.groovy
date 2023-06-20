@@ -9,7 +9,7 @@ class Basic extends Base {
     }
 
     public void cleanWorkspace() {
-        this.jenkinsPrint("cleaning the workspace.....")
+        this.jenkinsPrint("cleaning the workspace....", 3)
         this.script.cleanWs(cleanWhenAborted: false,
                             cleanWhenFailure: false,
                             cleanWhenNotBuilt: false,
