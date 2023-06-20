@@ -12,7 +12,7 @@ class Base implements Serializable {
     Base(script, jenkins) {   // jenkins : class jenkins.model.Jenkins (it is a singleton class)
         this.id = UUID.randomUUID();
         this.script = script;
-        this.jenkins = getJenkinsSingleton(jenkins)
+        this.jenkins = jenkins
         this.name = "";
     }
 
@@ -32,7 +32,7 @@ class Base implements Serializable {
         this.@script = script;
     }
     public void setJenkins(jenkins) {
-        this.@jenkins = getJenkinsSingleton(jenkins)
+        this.@jenkins = jenkins
     }
     public void setName(String name) {
         this.@name = name;
@@ -44,11 +44,6 @@ class Base implements Serializable {
         } else {
             println(log);
         }
-    }
-    
-    @NonCPS
-    public static def getJenkinsSingleton(jenkins) {
-        return jenkins.get()
     }
     
 }
