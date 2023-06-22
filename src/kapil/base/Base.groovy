@@ -39,7 +39,7 @@ class Base implements Serializable {
     }
 
     public void jenkinsPrint(String log, int loglevel) {
-        log = "[${java.time.LocalDateTime.now()}]: ${log}"
+        log = "##[${java.time.LocalDateTime.now()}]: ${log}"
         if (this.script != null) {
             this.script.echo(message: log);
         } else {
